@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.example.product;
+
+message ProductRequest {
+  string productId = 1;
+}
+
+message ProductResponse {
+  string productId = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+  int32 stockQuantity = 5;
+}
+
+message ProductListRequest {
+  int32 limit = 1;
+}
+
+message ProductListResponse {
+  repeated ProductResponse products = 1;
+}
+
+service ProductService {
+  rpc GetProduct(ProductRequest) returns (ProductResponse);
+  rpc ListProducts(ProductListRequest) returns (ProductListResponse);
+}
