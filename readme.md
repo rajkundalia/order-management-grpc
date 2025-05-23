@@ -3,7 +3,7 @@
 I've created a complete Spring Boot project with two gRPC-enabled services that communicate with each other, along with an API Gateway and Eureka server for service discovery. 
 Here's a summary of what this project demonstrates:
 
-##Key Components
+## Key Components
 
 1. Eureka Server: Service registry for service discovery
 2. API Gateway: Entry point that translates HTTP requests to gRPC calls
@@ -11,14 +11,14 @@ Here's a summary of what this project demonstrates:
 4. Order Service (gRPC Server 2): Processes orders by calling Product Service via gRPC
 5. Proto Common: Contains the proto files
 
-##Communication Flow
+## Communication Flow
 
 1. External clients call API Gateway via HTTP/REST
 2. API Gateway forwards requests to appropriate microservices using gRPC
 3. Order Service calls Product Service via gRPC when processing orders
 4. All services register with Eureka Server for service discovery
 
-##Key Features Demonstrated
+## Key Features Demonstrated
 
 1. Spring Boot gRPC server implementation
 2. gRPC service-to-service communication
@@ -30,7 +30,7 @@ The Product Service handles product information and provides endpoints for retri
 
 This project structure provides a good foundation for understanding how gRPC services communicate in a Spring Boot microservices environment.
 
-##Starting the Services
+## Starting the Services
 You can perform a ```mvn clean install``` at the parent folder, this will build all the jars and get java code for proto files as well.
 
 Start the services in the following order:
@@ -56,7 +56,7 @@ cd api-gateway
 mvn spring-boot:run
 ```
 
-##Testing the Application
+## Testing the Application
 1. Get Product List
 ```bash
 curl http://localhost:8080/api/products
